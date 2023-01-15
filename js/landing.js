@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
   }
 
   setInterval(() => {
-    stars.children.forEach((star) => {
-      star.style.opacity = Math.random();
-    });
+    for (let i = 0; i < stars.children.length; i++) {
+      stars.children[i].style.opacity = Math.random();
+    }
   }, 100);
 });
