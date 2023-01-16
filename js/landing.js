@@ -1,19 +1,17 @@
-// Create a preloader element
-const preloader = document.createElement("div");
-preloader.id = "preloader";
-
-// Add event listener to the preloader
-preloader.addEventListener("click", () => {
+// Add event listener to the document
+document.addEventListener("click", () => {
   // Play the music element
   const music = document.querySelector("#music");
   music.play();
 
   // Hide the preloader
+  const preloader = document.querySelector("#preloader");
   preloader.style.display = "none";
-});
 
-// Append the preloader to the body
-document.body.appendChild(preloader);
+  // Enable pointer-events on the stars element
+  const stars = document.querySelector("#stars");
+  stars.style.pointerEvents = "auto";
+});
 
 // Add the event listener to the window for the load event
 window.addEventListener("load", () => {
