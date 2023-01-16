@@ -23,6 +23,9 @@ h1 {
   color: white;
   text-align: center;
   margin-top: 50px;
+  font-size: 4em;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 2px 2px 5px black;
 }
 
 #preloader {
@@ -40,7 +43,9 @@ h1 {
 #preloader-text {
   color: white;
   font-size: 2em;
+  font-family: "Orbitron", sans-serif;
   pointer-events: all;
+  text-shadow: 2px 2px 5px black;
 }
 
 #stars {
