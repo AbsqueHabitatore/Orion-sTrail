@@ -34,6 +34,13 @@ class Star {
     this.x += this.speed * 20;
     this.radius += 1;
   }
+  reset() {
+    this.x = Math.random() * window.innerWidth;
+    this.y = Math.random() * window.innerHeight;
+    this.speed = Math.random() * 3 + 0.5;
+    this.radius = Math.random() * 1.5;
+    this.color = this.randomColor();
+  }
 }
 
 const canvas = document.getElementById("starfield");
@@ -133,9 +140,15 @@ function animate() {
       for (const star of stars) {
         star.distort();
       }
+
       setTimeout(() => {
+        // Reset all stars and hide the eye and the text
+        for (const star of stars) {
+          star.reset();
+        }
         eyeOpen = false;
         textOpacity = 0;
+        eyeRadius = 0;
       }, 5000);
     }
   }
