@@ -34,6 +34,7 @@ class Star {
     this.x += this.speed * 20;
     this.radius += 1;
   }
+
   reset() {
     this.x = Math.random() * window.innerWidth;
     this.y = Math.random() * window.innerHeight;
@@ -54,14 +55,14 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-const starCount = 200;
+const starCount = 500;
 const stars = [];
 
 for (let i = 0; i < starCount; i++) {
   const x = Math.random() * window.innerWidth;
   const y = Math.random() * window.innerHeight;
-  const radius = Math.random() * 1.5;
-  const speed = Math.random() * 3 + 0.5;
+  const radius = Math.random() * 2;
+  const speed = Math.random() * 2 + 0.5;
   const color = new Star().randomColor();
   stars.push(new Star(x, y, radius, speed, color));
 }
@@ -89,7 +90,7 @@ function drawEye() {
       0,
       Math.PI * 2
     );
-    ctx.fillStyle = "rgba(255,0,0,0.9)"; // Changed color to red
+    ctx.fillStyle = "rgba(255,0,0,0.9)";
     ctx.fill();
   }
 
@@ -110,7 +111,7 @@ function drawEye() {
   // Draw the text
   if (eyeOpen) {
     ctx.font = "50px 'Courier New', monospace";
-    ctx.fillStyle = `rgba(255, 255, 255, ${textOpacity})`; // Added fading effect to text
+    ctx.fillStyle = `rgba(255, 255, 255, ${textOpacity})`;
     ctx.textAlign = "center";
     ctx.fillText(
       "I see you",
